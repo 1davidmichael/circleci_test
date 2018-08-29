@@ -11,5 +11,11 @@ jobs:
       - run:
           name: Print the Current Time
           command: date
+      - run:
+          name: Output artifact
+          command: echo "$(date)" > /tmp/output.txt
+
+      - store_artifacts:
+          path: /tmp/output.txt
 
 # vim: ft=yaml
